@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LOLO.GENIUS AI — Video to Viral Clips</title>
+<style>
+:root{--bg:#090b12;--panel:#111522;--panel2:#171d2d;--line:#293149;--muted:#929bb1;--text:#f5f7ff;--accent:#a78bfa;--cyan:#55d6d0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0%,#242044 0,transparent 32%),var(--bg);color:var(--text);font:15px Inter,system-ui,Arial}
+button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:11px;padding:12px 16px;font-weight:700}
+.wrap{max-width:1180px;margin:auto;padding:24px}.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:8px 0 22px}.brand{font-size:22px;font-weight:900;letter-spacing:-.7px}.brand span{color:var(--accent)}.pill{border:1px solid #3a315b;color:#c9b9ff;background:#211b37;padding:7px 12px;border-radius:99px;font-size:12px}
+.hero{padding:44px 0 28px}.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.02;letter-spacing:-2px;margin:0 0 12px}.grad{background:linear-gradient(90deg,#c4b5fd,#5eead4);-webkit-background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:650px;line-height:1.6;margin:0}
+.layout{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}.panel{background:linear-gradient(160deg,#151b2a,#101522);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 18px 50px #0003}.panel h2{font-size:17px;margin:0 0 7px}.sub{color:var(--muted);font-size:13px;margin:0 0 18px}
+label{display:block;font-size:13px;color:#c5cbe0;margin:15px 0 8px}input,select{width:100%;background:#0b101b;border:1px solid #303950;border-radius:10px;padding:13px;color:var(--text);outline:none}input:focus,select:focus{border-color:var(--accent)}
+.urlrow{display:flex;gap:9px}.urlrow input{flex:1;min-width:0}.primary{background:linear-gradient(100deg,#8b5cf6,#5b8cff);color:white}.secondary{background:#252d41;color:#e7eaff;border:1px solid #3a4560}.wide{width:100%;margin-top:17px}.drop{border:1px dashed #59627b;background:#0d1320;border-radius:12px;padding:18px;text-align:center;color:var(--muted);font-size:13px}.drop input{display:none}.settings{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.platform{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line)}.platform:last-child{border:0}.platname{display:flex;align-items:center;gap:10px;font-weight:650}.logo{width:34px;height:34px;border-radius:10px;background:#242b40;display:grid;place-items:center;font-size:17px}.connect{padding:8px 12px;background:#252d41;color:#e6e9f5;border:1px solid #3a4560;font-size:12px}.status{font-size:11px;color:var(--muted);margin-top:3px}
+.output{margin-top:18px}.clip{display:flex;gap:13px;align-items:center;padding:13px;background:#0d1320;border:1px solid var(--line);border-radius:12px;margin-top:10px}.thumb{width:82px;height:58px;border-radius:8px;background:linear-gradient(135deg,#382d65,#155b68);display:grid;place-items:center;font-size:22px}.clip strong{display:block;font-size:13px}.clip small{color:var(--muted)}.clip button{margin-left:auto;padding:8px 10px;font-size:11px;background:#252d41;color:#fff}
+.notice{margin-top:16px;padding:12px 14px;border-radius:10px;background:#211c12;border:1px solid #5b4824;color:#e8d5a6;font-size:12px;line-height:1.5}.muted{color:var(--muted)}.hidden{display:none}.footer{text-align:center;color:#667087;font-size:12px;padding:30px 0}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.wrap{padding:16px}.hero{padding-top:32px}.urlrow{flex-direction:column}.settings{grid-template-columns:1fr 1fr}}
+</style></head>
+<body><div class="wrap">
+<header class="top"><div class="brand">LOLO<span>.</span>GENIUS AI</div><div class="pill">✦ AI VIDEO STUDIO</div></header>
+<section class="hero"><h1>Turn long videos into<br><span class="grad">viral short clips.</span></h1><p>Paste a video link or upload your video. Prepare vertical clips, captions, titles and hashtags for your social channels — all from one dashboard.</p></section>
+<div class="layout">
+<main>
+<section class="panel">
+<h2>① Add your video</h2><p class="sub">Start with a video URL or upload a video file you own or have permission to use.</p>
+<label for="videoUrl">Video link</label><div class="urlrow"><input id="videoUrl" placeholder="Paste your YouTube or video URL here"><button class="primary" id="analyze">Analyze video ↗</button></div>
+<div style="text-align:center;color:#737e97;font-size:12px;padding:12px">— OR —</div>
+<label class="drop" for="fileInput">＋ Choose video file from your device<br><span id="fileName">MP4, MOV or WebM</span><input id="fileInput" type="file" accept="video/*"></label>
+<div class="settings">
+<div><label for="clipCount">Number of clips</label><select id="clipCount"><option>5</option><option>3</option><option>10</option></select></div>
+<div><label for="clipLength">Clip length</label><select id="clipLength"><option value="30">Up to 30 seconds</option><option value="45">Up to 45 seconds</option><option value="60" selected>Up to 60 seconds</option><option value="90">Up to 90 seconds</option></select></div>
+<div><label for="aspect">Video format</label><select id="aspect"><option>9:16 — Reels / Shorts</option><option>1:1 — Square</option><option>16:9 — Landscape</option></select></div>
+<div><label for="language">Caption language</label><select id="language"><option>English</option><option>Hindi</option><option>Hinglish</option></select></div>
+</div>
+<button class="primary wide" id="generate">✦ Generate clip plan</button>
+<div id="message" class="notice hidden"></div>
+</section>
+<section class="panel output"><h2>③ Your clips</h2><p class="sub">Generated clip ideas and metadata will appear here.</p><div id="clips"><p class="muted" style="font-size:13px">No clips yet. Add a video to get started.</p></div></section>
+</main>
+<aside>
+<section class="panel"><h2>② Connect your channels</h2><p class="sub">Connect accounts to publish from one place.</p>
+<div class="platform"><div class="platname"><div class="logo">▶</div><div>YouTube<div class="status" id="ytStatus">Not connected</div></div></div><button class="connect" data-platform="YouTube">Connect</button></div>
+<div class="platform"><div class="platname"><div class="logo">◎</div><div>Instagram<div class="status" id="igStatus">Not connected</div></div></div><button class="connect" data-platform="Instagram">Connect</button></div>
+<div class="platform"><div class="platname"><div class="logo">f</div><div>Facebook<div class="status" id="fbStatus">Not connected</div></div></div><button class="connect" data-platform="Facebook">Connect</button></div>
+<div class="notice">Account connection and direct publishing require official platform API approval, OAuth setup and a secure backend. These buttons are setup placeholders, not live account connections.</div>
+</section>
+<section class="panel" style="margin-top:18px"><h2>④ Publishing preferences</h2><p class="sub">Choose how your clips should go live.</p>
+<label><input type="checkbox" id="approval" checked style="width:auto;margin-right:8px"> Require my approval before publishing</label>
+<label for="schedule">Publishing schedule</label><select id="schedule"><option>Publish now (after approval)</option><option>Save as drafts</option><option>Schedule for later</option></select>
+<label for="brandTag">Brand / channel name (optional)</label><input id="brandTag" placeholder="e.g. My channel name">
+</section>
+</aside></div>
+<div class="footer">LOLO.GENIUS AI · Create responsibly. Upload only content you own or are authorized to use.</div></div>
+<script>
+const $=id=>document.getElementById(id);let selectedFile=null;
+$('fileInput').addEventListener('change',e=>{selectedFile=e.target.files[0]||null;$('fileName').textContent=selectedFile?selectedFile.name:'MP4, MOV or WebM';});
+$('analyze').onclick=()=>{const u=$('videoUrl').value.trim();if(!u){show('Paste a video link first, or choose a video file below.');return;}show('Link received. To fetch and analyze a URL, this site needs a server-side video processing service. For now, upload the original video file to prepare a local clip plan.');};
+$('generate').onclick=()=>{
+ if(!selectedFile&&!$('videoUrl').value.trim()){show('Please paste a video link or upload a video file first.');return;}
+ if(!selectedFile){show('A link alone cannot be processed by this front-end demo. Connect a backend video analyzer to download/inspect the source safely, then generate clips.');return;}
+ const count=+$('clipCount').value,lang=$('language').value,brand=$('brandTag').value.trim();
+ const titles=['The moment you need to see','A powerful moment from this video','Wait for the key takeaway','One detail you might have missed','The best part, in under a minute','This changes the whole perspective','A quick moment worth sharing','The highlight you came for','Watch this before you scroll','The takeaway in 60 seconds'];
+ const tags='#Shorts #Reels #VideoHighlights #MustWatch';
+ $('clips').innerHTML='';
+ for(let i=0;i<count;i++){let title=titles[i%titles.length];let div=document.createElement('div');div.className='clip';div.innerHTML='<div class="thumb">▶</div><div><strong>Clip idea '+(i+1)+'</strong><small>'+title+'</small><br><small>'+Math.min(+$('clipLength').value,60)+' sec · '+$('aspect').value+'</small></div><button type="button">Copy details</button>';div.querySelector('button').onclick=()=>{let text=title+(brand?' | '+brand:'')+'\\n'+tags; navigator.clipboard?.writeText(text);show('Title and hashtag template copied (if clipboard permission is available).');};$('clips').appendChild(div);}
+ show('Video selected: '+selectedFile.name+'. This prototype has created a clip-plan preview. Actual scene detection, cutting, subtitles and AI ranking need the video-processing backend. Titles and hashtags shown here are starter templates, not AI analysis of your footage.');
+};
+function show(t){$('message').textContent=t;$('message').classList.remove('hidden');}
+document.querySelectorAll('[data-platform]').forEach(b=>b.onclick=()=>show(b.dataset.platform+' connection is not active in this prototype. A production version must use the official '+b.dataset.platform+' developer API and secure OAuth login; never enter your social-media password here.'));
+</script></body></html>
